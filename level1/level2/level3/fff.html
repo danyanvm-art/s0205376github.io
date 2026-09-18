@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 1: База</title>
+</head>
+<body>
+
+    <h1>Список ссылок (база)</h1>
+    <ul>
+        <li><a href="http://kubsu.ru/">1) Ссылка на kubsu.ru (http)</a></li>
+        <li><a href="https://kubsu.ru/">2) Ссылка на kubsu.ru (https)</a></li>
+
+        <li>
+            3) Ссылка-картинка:
+            <br>
+            <a href="https://kubsu.ru/">
+                <img src="photohtml2.jpg" alt="Лого">
+            </a>
+        </li>
+
+        <li><a href="about.html">4) Ссылка на внутреннюю страницу (about.html)</a></li>
+        <li><a href="fff.html">5) Ссылка на главную (index.html)</a></li>
+
+        <li><a href="#contacts">6) Ссылка на блок "Контакты" на этой странице</a></li>
+        <li>
+            7) Ссылка с тремя параметрами в URL:
+            <br>
+            <a href="result.html?name=Ivan&age=20&city=Krasnodar" target="_blank">Ссылка с тремя параметрами</a>
+        </li>
+        <li>
+            8) Ссылка с параметром id в URL:
+            <br>
+            <a href="result.html?id=12345" target="_blank">Ссылка с параметром id</a>
+        </li>
+
+        <li><a href="contacts.html">9) Ссылка на файл в текущей папке</a></li>
+        <li><a href="about/info.html">10) Ссылка в папке about</a></li>
+        <li><a href="../page.html">11) Ссылка уровнем выше (заглушка)</a></li>
+        <li><a href="../../pagemain.html">12) Ссылка двумя уровнями выше (заглушка)</a></li>
+
+        <li>
+            13) Контекстная ссылка:
+            <p>Зайдите на <a href="https://kubsu.ru/">сайт университета</a>, чтобы узнать расписание.</p>
+        </li>
+        <li>
+            14) Ссылка на фрагмент страницы стороннего сайта:
+            <br>
+            <a href="https://en.wikipedia.org/wiki/Key_Glock#:~:text=known%20professionally%20as%20Key%20Glock%2C%20is%20an%20American%20rapper" target="_blank">
+                Перейти к фрагменту о Key Glock 
+            </a>
+        </li>
+        <li>
+            15) Ссылки из прямоугольных и круглых областей картинки (HTML-тег map):
+            <br>
+            <!-- ВАЖНО: src="myphoto.jpg" — это имя твоего файла! -->
+            <img src="photohtml1.jpg" usemap="#image-map" alt="Карта ссылок" width="400" height="200">
+            
+            <map name="image-map">
+                <!-- Прямоугольник: левая половина картинки -->
+                <area shape="rect" coords="0,0,200,200" href="https://kubsu.ru" target="_blank" alt="Прямоугольник">
+                
+                <!-- Круг: правая половина картинки -->
+                <area shape="circle" coords="300,100,60" href="https://yandex.ru" target="_blank" alt="Круг">
+            </map>
+        </li>
+        <li><a href="" onclick="return false;">16) Пустая ссылка</a></li>
+        <li>17) Имитация ссылки (просто текст): <span style="color: blue; text-decoration: underline;">Нажмите сюда</span></li>
+
+        <li><a href="https://kubsu.ru/" rel="nofollow">18) Ссылка с запретом для поисковиков</a></li>
+        <li>
+            19) Ссылка на скачивание файла:
+            <br>
+            <a href="testdownload.zip" download>Скачать пример архива (file.zip)</a>
+        </li>
+        <li>
+            20) Нумерованный список:
+            <ol>
+                <li><a href="https://kubsu.ru/" title="Главная КубГУ">КубГУ</a></li>
+                <li><a href="https://google.com/" title="Поиск">Google</a></li>
+            </ol>
+        </li>
+        <li>
+            21) Ссылка на файл на сервере FTP с авторизацией:
+            <br>
+            <a href="ftp://login:password@ftp.example.com/file.txt" target="_blank">Скачать файл с FTP-сервера (с авторизацией)</a>
+        </li>
+
+    </ul>
+
+    <h2 id="contacts">Контакты</h2>
+    <p>Здесь находится информация для связи.</p>
+    <hr>
+
+    <h2>Форма (база)</h2>
+    <form action="/save" method="post">
+        
+        <p>
+            <label>1) ФИО: </label>
+            <input type="text" name="fio" placeholder="Иванов И.И.">
+        </p>
+
+        <p>
+            <label>2) Телефон: </label>
+            <input type="tel" name="phone" placeholder="+7 (999) 000-00-00">
+        </p>
+
+        <p>
+            <label>3) E-mail: </label>
+            <input type="email" name="email" placeholder="name@mail.ru">
+        </p>
+
+        <p>
+            <label>4) Дата рождения: </label>
+            <input type="date" name="birth">
+        </p>
+
+        <p>
+            5) Пол:
+            <br>
+            <input type="radio" name="gender" value="male" checked> Мужской
+            <input type="radio" name="gender" value="female"> Женский
+        </p>
+
+        <p>
+            6) Любимый язык:
+            <br>
+            <select name="lang">
+                <option value="pascal">Pascal</option>
+                <option value="c">C</option>
+                <option value="cpp">C++</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="js">JavaScript</option>
+            </select>
+        </p>
+
+        <p>
+            <label>7) Биография: </label>
+            <br>
+            <textarea name="bio" rows="4" cols="30" placeholder="О себе..."></textarea>
+        </p>
+
+        <p>
+            <input type="checkbox" name="agree">
+            8) С контрактом ознакомлен(а)
+        </p>
+
+        <p>
+            <button type="submit">9) Сохранить</button>
+        </p>
+    </form>
+</body>
+</html>
